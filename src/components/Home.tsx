@@ -11,9 +11,9 @@ export const Home = () => {
         {/* Left Content */}
         <div className="p-8 md:p-14 lg:p-20 flex flex-col justify-center border-r border-editorial-border bg-white">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <span className="font-serif italic text-editorial-secondary text-lg md:text-xl mb-4 block">
               {siteContent.home.hero.eyebrow}
@@ -21,7 +21,7 @@ export const Home = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-poppins font-bold text-editorial-primary mb-8 leading-[1.1] tracking-tight text-balance">
               {siteContent.home.hero.headline}
             </h1>
-            <p className="text-base md:text-lg text-editorial-muted max-w-sm mb-12 leading-relaxed">
+            <p className="text-base md:text-lg text-editorial-muted max-w-sm mb-12 leading-relaxed font-serif italic">
               {siteContent.home.hero.description}
             </p>
             
@@ -73,15 +73,21 @@ export const Home = () => {
       {/* Apa Itu BBA Section */}
       <section className="py-24 bg-white border-t border-editorial-border">
         <div className="container mx-auto px-4 lg:px-20">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-poppins font-bold text-editorial-primary mb-8 tracking-tight">
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto text-center"
+          >
+            <h2 className="text-3xl md:text-4xl font-poppins font-bold text-editorial-primary mb-8 tracking-tight italic">
               {siteContent.home.apaItuBBA.title}
             </h2>
             <div className="w-20 h-1 bg-editorial-secondary mx-auto mb-10" />
             <p className="text-lg md:text-xl text-editorial-muted leading-relaxed italic font-serif opacity-80">
               "{siteContent.home.apaItuBBA.content}"
             </p>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -123,8 +129,8 @@ export const Home = () => {
             >
               <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
                 <img 
-                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=800" 
-                  alt="Team BBA" 
+                  src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=800" 
+                  alt="Pemandangan Bisnis" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
                 />

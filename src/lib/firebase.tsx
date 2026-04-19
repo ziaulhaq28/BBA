@@ -70,8 +70,18 @@ export const FirebaseProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   const login = async () => {
-    const provider = new GoogleAuthProvider();
-    await signInWithPopup(auth, provider);
+    try {
+      const provider = new GoogleAuthProvider();
+      // Use signInWithPopup - it handles the iframe restrictions automatically in Firebase
+      await signInWithPopup(auth, provider);
+    } catch (error: any) {
+      console.error("Login detail error:", error);
+      if (error.code === 'auth/popup-blocked') {
+        alert("Pop-up login diblokir oleh browser. Silakan izinkan pop-up untuk situs ini agar bisa login.");
+      } else {
+        alert("Terjadi kesalahan saat login: " + error.message);
+      }
+    }
   };
 
   const logout = async () => {

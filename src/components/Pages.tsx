@@ -105,30 +105,54 @@ export const ArtikelDetail = () => {
 
 export const Tentang = () => {
     return (
-        <div className="bg-editorial-bg py-24 min-h-screen">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="bg-editorial-bg py-24 min-h-screen"
+        >
           <div className="container mx-auto px-4 lg:px-20 text-center lg:text-left">
              <div className="max-w-4xl mx-auto mb-24">
-                <span className="font-serif italic text-editorial-secondary text-xl mb-4 block">Visi & Misi</span>
-                <h1 className="text-5xl md:text-7xl font-poppins font-bold text-editorial-primary mb-10 tracking-tight leading-tight">
+                <motion.span 
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  className="font-serif italic text-editorial-secondary text-xl mb-4 block"
+                >
+                  Visi & Misi
+                </motion.span>
+                <motion.h1 
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  className="text-5xl md:text-7xl font-poppins font-bold text-editorial-primary mb-10 tracking-tight leading-tight"
+                >
                     Mencetak Owner <br />
                     Apotek Berintegritas.
-                </h1>
-                <p className="text-xl text-editorial-muted leading-relaxed italic font-serif">
-                   "Kami percaya bahwa apotek yang sukses adalah yang mampu menyeimbangkan visi kesehatan sosial dengan kemandirian bisnis yang kuat."
-                </p>
+                </motion.h1>
+                <motion.p 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  className="text-xl text-editorial-muted leading-relaxed italic font-serif"
+                >
+                   "Kami percaya bahwa apotek yang sukses adalah yang mampu menyeimbangkan visi kesehatan sosial dengan kemandirian bisnis yang kuat. Di BBA, kami membekali Anda bukan hanya dengan angka, tapi dengan keberanian untuk melakukan hal yang benar."
+                </motion.p>
              </div>
 
              <div className="grid lg:grid-cols-2 gap-24 items-center mb-24">
-                <div className="aspect-square bg-white p-4 rounded-[60px] shadow-2xl relative">
-                   <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800" alt="Tentang Kami" className="w-full h-full object-cover rounded-[50px]" referrerPolicy="no-referrer" />
-                   <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-editorial-secondary rounded-full flex items-center justify-center p-8 animate-pulse-soft">
-                      <p className="text-white font-poppins font-black text-center text-xs tracking-widest leading-tight uppercase">EXPERIENCE THE BBA STANDARD</p>
-                   </div>
-                </div>
-                <div className="space-y-8 text-left">
-                   <h2 className="text-3xl font-poppins font-bold text-editorial-primary">PERJALANAN KAMI</h2>
-                   <p className="text-editorial-muted leading-relaxed text-lg">
-                      Berawal dari pengalaman lapangan selama lebih dari satu dekade di industri farmasi, tim pendiri BBA menyadari banyaknya apoteker dan investor yang 'takut' untuk memulai atau mengelola bisnis apotek karena minimnya literatur manajemen yang aplikatif di Indonesia.
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  className="aspect-square bg-white p-4 rounded-[60px] shadow-2xl relative"
+                >
+                   <img src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=80&w=800" alt="Landscape" className="w-full h-full object-cover rounded-[50px]" referrerPolicy="no-referrer" />
+                </motion.div>
+                <motion.div 
+                  initial={{ opacity: 0, x: 40 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  className="space-y-8 text-left"
+                >
+                   <h2 className="text-3xl font-poppins font-bold text-editorial-primary">MENGAPA KAMI ADA?</h2>
+                   <p className="text-editorial-muted leading-relaxed text-lg italic font-serif">
+                      BBA hadir sebagai komitmen untuk membenahi industri farmasi dari dalam. Kami ingin setiap langkah yang Anda ambil adalah langkah yang terukur.
                    </p>
                    <p className="text-editorial-muted leading-relaxed text-lg">
                       {siteContent.home.tentangKami.content}
@@ -143,9 +167,9 @@ export const Tentang = () => {
                          <p className="text-xs text-editorial-muted leading-relaxed">Membawa teknologi IT ke apotek konvensional.</p>
                       </div>
                    </div>
-                </div>
+                </motion.div>
              </div>
           </div>
-        </div>
-    )
+        </motion.div>
+    );
 }

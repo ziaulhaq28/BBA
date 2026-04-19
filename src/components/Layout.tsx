@@ -28,8 +28,8 @@ export const Layout = ({ children }: LayoutProps) => {
       {/* Header / Navbar */}
       <nav className="editorial-nav">
         <div className="container mx-auto px-4 lg:px-10 flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-[40px] h-[40px] overflow-hidden rounded-lg bg-editorial-secondary flex items-center justify-center">
+          <Link to="/" className="flex items-center gap-3 group shrink-0">
+            <div className="w-[32px] h-[32px] overflow-hidden rounded-lg bg-editorial-secondary flex items-center justify-center shrink-0">
               <img 
                 src={siteContent.branding.logoUrl} 
                 alt={siteContent.branding.logoAlt}
@@ -40,17 +40,17 @@ export const Layout = ({ children }: LayoutProps) => {
                 }}
               />
             </div>
-            <span className="font-poppins font-bold text-lg md:text-xl tracking-tight text-editorial-primary uppercase leading-tight">
+            <span className="font-poppins font-bold text-sm lg:text-base tracking-tight text-editorial-primary uppercase leading-tight whitespace-nowrap">
               {siteContent.branding.name}
             </span>
           </Link>
 
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-4 xl:gap-8 flex-nowrap">
             {navLinks.map((link) => (
               <NavLink 
                 key={link.name} 
                 to={link.href}
-                className={({ isActive }) => `text-[13px] font-bold uppercase tracking-[0.05em] transition-all relative py-1 ${
+                className={({ isActive }) => `text-[11px] xl:text-[13px] font-bold uppercase tracking-[0.05em] transition-all relative py-1 whitespace-nowrap ${
                   isActive 
                   ? 'text-editorial-primary border-b-2 border-editorial-secondary' 
                   : 'text-editorial-text opacity-70 hover:opacity-100 hover:text-editorial-primary'
@@ -61,7 +61,7 @@ export const Layout = ({ children }: LayoutProps) => {
             ))}
           </div>
 
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-4 shrink-0">
             <button className="text-editorial-primary hover:opacity-70 transition-opacity">
               <Search className="w-5 h-5" />
             </button>

@@ -28,7 +28,7 @@ export const siteContent = {
     
     tentangKami: {
       title: "TENTANG KAMI",
-      content: "Kami adalah tim profesional yang berdedikasi untuk memajukan industri farmasi di Indonesia melalui edukasi manajemen bisnis yang tepat. BBA lahir dari keresahan akan banyaknya apotek yang memiliki pelayanan teknis yang baik namun lemah secara manajemen bisnis, sehingga sulit berkembang. Dengan metodologi yang telah teruji pada ratusan klien, kami berkomitmen menjadi pendamping setia bagi perjalanan sukses bisnis apotek Anda.",
+      content: "Kami percaya bahwa kesuksesan bukan hanya soal angka, tapi soal sistem yang kokoh dan integritas yang tak tergoyahkan. BBA hadir untuk memberikan kepastian langkah bagi Anda yang siap berproses. Bisnis apotek adalah pengabdian yang harus dijalankan dengan profesionalisme tinggi. Kami tidak sekadar memberikan teori, tapi kami berbagi kegagalan dan keberhasilan nyata agar Anda bisa melompat lebih tinggi.",
     },
     
     testimonials: [
@@ -154,7 +154,7 @@ Ramai bukan berarti untung. Manajemen harus mulai beralih dari sekadar mengejar 
         subtitle: "Fondasi & Mindset Strategis",
         description: "Dirancang untuk membangun logika bisnis yang benar. Di sini Anda belajar membangun mindset owner, memahami anatomi profit, dan menyusun urutan strategi yang presisi agar pondasi bisnis Anda tidak goyah.",
         examples: ["Sekolah Owner Bisnis Apotek", "Kelas Buka Apotek dari Nol", "Kelas Keuangan Owner"],
-        image: "https://images.unsplash.com/photo-1541000084628-4444f2444c3d?q=80&w=1200&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop"
       },
       {
         title: "PENDAMPINGAN BISNIS",
