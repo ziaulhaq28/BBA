@@ -1,13 +1,13 @@
 import { motion } from 'motion/react';
 import { siteContent } from '../constants/content';
-import { ArrowRight, CheckCircle2, ChevronRight } from 'lucide-react';
+import { ArrowLeft, ArrowRight, CheckCircle2, ChevronRight, Quote, ShieldCheck, Signal, Users } from 'lucide-react';
 import { useParams, Link } from 'react-router-dom';
 
 export const Layanan = () => {
   return (
     <div className="bg-editorial-bg py-24 min-h-screen">
       <div className="container mx-auto px-4 lg:px-20">
-        <div className="max-w-4xl mb-20 text-center lg:text-left">
+        <div className="max-w-4xl pt-10 mb-20 text-center lg:text-left">
            <span className="font-serif italic text-editorial-secondary text-xl mb-4 block">Expert Solutions</span>
            <h1 className="text-4xl md:text-5xl lg:text-6xl font-poppins font-bold text-editorial-primary mb-8 tracking-tight italic uppercase">
               {siteContent.layanan.title}
@@ -17,7 +17,8 @@ export const Layanan = () => {
            </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        {/* Main Services */}
+        <div className="grid lg:grid-cols-3 gap-8 mb-32">
           {siteContent.layanan.items.map((service, index) => (
              <motion.div 
                key={service.id}
@@ -39,8 +40,62 @@ export const Layanan = () => {
              </motion.div>
           ))}
         </div>
+
+        {/* Additional Services - Now on the Services page */}
+        <div className="mb-20">
+            <h2 className="text-3xl md:text-5xl font-poppins font-bold text-editorial-primary mb-4 tracking-tight uppercase italic text-center">Program & Produk BBA Lainnya</h2>
+            <p className="text-editorial-muted font-bold uppercase tracking-widest text-xs text-center">Pilihan edukasi terlengkap untuk setiap kebutuhan</p>
+        </div>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+          {siteContent.layanan.additionalItems?.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ delay: (index % 3) * 0.1 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-[2.5rem] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-editorial-border flex flex-col group hover:shadow-2xl transition-all"
+            >
+              <div className="aspect-video w-full overflow-hidden relative">
+                <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer" />
+                <div className="absolute inset-0 bg-editorial-primary/10 group-hover:bg-transparent transition-colors" />
+              </div>
+
+              <div className="p-8 flex-1 flex flex-col">
+                <h3 className="text-lg lg:text-xl font-poppins font-bold text-editorial-primary mb-8 min-h-[56px] leading-snug italic uppercase">
+                  {item.title}
+                </h3>
+
+                <div className="flex items-center justify-between mt-auto pb-8 border-b border-editorial-border">
+                  <div className="flex items-center gap-2">
+                     <Signal className="w-4 h-4 text-editorial-secondary" />
+                     <span className="text-[10px] font-bold text-editorial-muted uppercase">{item.stats}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                     <Users className="w-4 h-4 text-editorial-secondary" />
+                     <span className="text-[10px] font-bold text-editorial-muted uppercase">Trusted</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                     <ShieldCheck className="w-4 h-4 text-editorial-secondary" />
+                     <span className="text-[10px] font-bold text-editorial-muted uppercase">Verified</span>
+                  </div>
+                </div>
+
+                <a 
+                  href={siteContent.kontak.consultationLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 w-full py-4 bg-editorial-primary text-white rounded-2xl font-poppins font-bold text-[10px] uppercase tracking-[0.2em] flex items-center justify-center gap-3 hover:bg-editorial-secondary transition-all shadow-lg active:scale-95"
+                >
+                  <Quote className="w-3 h-3 fill-current rotate-180" /> KONSULTASI GRATIS
+                </a>
+              </div>
+            </motion.div>
+          ))}
+        </div>
         
-        <div className="mt-24 p-12 bg-editorial-primary rounded-[40px] text-white overflow-hidden relative">
+        <div className="mt-32 p-12 bg-editorial-primary rounded-[40px] text-white overflow-hidden relative">
            <div className="absolute -top-20 -right-20 w-64 h-64 bg-editorial-secondary/20 rounded-full blur-3xl" />
            <div className="grid lg:grid-cols-2 gap-16 items-center relative z-10">
               <div>

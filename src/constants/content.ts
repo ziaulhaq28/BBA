@@ -15,8 +15,23 @@ export const siteContent = {
   home: {
     hero: {
       eyebrow: "Solusi Terintegrasi Dunia Farmasi",
-      headline: "Ubah Potensi Apotek Jadi Profit Nyata.",
-      description: "BBA membantu Anda membangun apotek dari nol hingga optimalisasi omzet bagi apotek yang stagnan. Kami hadir sebagai ahli di persimpangan Bisnis & Kesehatan.",
+      slides: [
+        {
+          title: "BBA Berkomitmen Memajukan Indonesia Melalui Apotek Mandiri",
+          description: "Melalui berbagai pendampingan, BBA berkontribusi pada pembangunan ekonomi kesehatan masyarakat dengan meningkatkan standar pelayanan apotek profesional yang berkelanjutan.",
+          image: "https://images.unsplash.com/photo-1579152276503-34e840a6b107?q=80&w=1920&auto=format&fit=crop"
+        },
+        {
+          title: "Membangun Ekosistem Bisnis Apotek Terintegrasi dari Hulu ke Hilir",
+          description: "Dengan visi menjadi pelopor edukasi industri farmasi Indonesia, BBA menghadirkan sistemasi terpadu yang berdampak nyata bagi profitabilitas dan keberlanjutan owner apotek di seluruh pelosok negeri.",
+          image: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?q=80&w=1920&auto=format&fit=crop"
+        },
+        {
+          title: "Belajar Bisnis Apotek (BBA)",
+          description: "Kami berkomitmen menghadirkan edukasi bisnis apotek berkualitas tinggi yang aman, efektif, dan terjangkau untuk seluruh owner apotek, sekaligus menjadi katalisator dalam pengembangan sistem operasional apotek modern di Indonesia.",
+          image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1920&auto=format&fit=crop"
+        }
+      ],
       ctaPrimary: "Konsultasi Gratis",
       ctaSecondary: "Lihat Hasil Audit",
     },
@@ -102,161 +117,161 @@ export const siteContent = {
     additionalItems: [
       {
         title: "Bootcamp Buka Bisnis Apotek untuk Pemula",
-        image: "https://images.unsplash.com/photo-1524178232457-3aa2a0993850?q=80&w=600",
+        image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=600&auto=format&fit=crop",
         stats: "118+",
         trusted: true,
         verified: true
       },
       {
         title: "Jasa Pencatatan Keuangan Bisnis Apotek",
-        image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=600",
+        image: "https://images.unsplash.com/photo-1454165833767-027e69272332?q=80&w=600&auto=format&fit=crop",
         stats: "118+",
         trusted: true,
         verified: true
       },
       {
         title: "Sekolah Jenderal Bisnis Apotek Kelas Purchasing dan Inventory",
-        image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=600",
+        image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=600&auto=format&fit=crop",
         stats: "118+",
         trusted: true,
         verified: true
       },
       {
         title: "Sekolah Jenderal Bisnis Apotek Kelas HRD",
-        image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=600",
+        image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=600&auto=format&fit=crop",
         stats: "118+",
         trusted: true,
         verified: true
       },
       {
         title: "Sekolah Jenderal Bisnis Apotek Kelas Keuangan",
-        image: "https://images.unsplash.com/photo-1554224154-26039560d8b2?q=80&w=600",
+        image: "https://images.unsplash.com/photo-1554224155-1d1d52988955?q=80&w=600&auto=format&fit=crop",
         stats: "118+",
         trusted: true,
         verified: true
       },
       {
         title: "Sekolah Jenderal Bisnis Apotek Kelas Marketing",
-        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop",
         stats: "118+",
         trusted: true,
         verified: true
       },
       {
         title: "Sekolah Jenderal Bisnis Apotek Kelas Apoteker Pengelola Apotek/Leader/Supervisor",
-        image: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?q=80&w=600",
+        image: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?q=80&w=600&auto=format&fit=crop",
         stats: "118+",
         trusted: true,
         verified: true
       },
       {
         title: "Sekolah Jenderal Bisnis Apotek Kelas Manager Operasional Apotek",
-        image: "https://images.unsplash.com/photo-1454165833767-027e69272332?q=80&w=600",
+        image: "https://images.unsplash.com/photo-1454165833767-027e69272332?q=80&w=600&auto=format&fit=crop",
         stats: "118+",
         trusted: true,
         verified: true
       },
       {
-        title: "Set Up Bisnis Apotek (Perizinan,Sdm, Inventory, Brand Sampai Grand Opening)",
-        image: "https://images.unsplash.com/photo-1587810633474-06c641611005?q=80&w=600",
+        title: "Set Up Bisnis Apotek (Perizinan, Sdm, Inventory, Brand Sampai Grand Opening)",
+        image: "https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?q=80&w=600&auto=format&fit=crop",
         stats: "20+",
         trusted: true,
         verified: true
       },
       {
         title: "Webinar Buka Apotek Langsung Laris (Online)",
-        image: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?q=80&w=600",
+        image: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?q=80&w=600&auto=format&fit=crop",
         stats: "Online",
         trusted: true,
         verified: true
       },
       {
         title: "Pendampingan Jago Jualan (Online)",
-        image: "https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=600",
+        image: "https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=600&auto=format&fit=crop",
         stats: "Online",
         trusted: true,
         verified: true
       },
       {
         title: "Setahun Melek Keuangan (SMK) (Online)",
-        image: "https://images.unsplash.com/photo-1554224155-8d04cbd22606?q=80&w=600",
+        image: "https://images.unsplash.com/photo-1554224155-8d04cbd22606?q=80&w=600&auto=format&fit=crop",
         stats: "Online",
         trusted: true,
         verified: true
       },
       {
         title: "Software Gampang Apotek",
-        image: "https://images.unsplash.com/photo-1551288049-bbbda5366392?q=80&w=600",
+        image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=600&auto=format&fit=crop",
         stats: "Software",
         trusted: true,
         verified: true
       },
       {
         title: "Private Coaching",
-        image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=600",
+        image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=600&auto=format&fit=crop",
         stats: "Verified",
         trusted: true,
         verified: true
       },
       {
         title: "Investor Club Pebisnis Apotek",
-        image: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?q=80&w=600",
+        image: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?q=80&w=600&auto=format&fit=crop",
         stats: "Trusted",
         trusted: true,
         verified: true
       },
       {
         title: "Sekolah Owner Bisnis Apotek (SOBA)",
-        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=600",
+        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=600&auto=format&fit=crop",
         stats: "SOBA",
         trusted: true,
         verified: true
       },
       {
         title: "Bisnis Audit Apotek",
-        image: "https://images.unsplash.com/photo-1454165833767-027e69272332?q=80&w=600",
+        image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=600&auto=format&fit=crop",
         stats: "Audit",
         trusted: true,
         verified: true
       },
       {
         title: "Workshop Autopilot Bisnis Apotek",
-        image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=600",
+        image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=600&auto=format&fit=crop",
         stats: "Workshop",
         trusted: true,
         verified: true
       },
       {
         title: "Buku Understanding Keuangan Apotek",
-        image: "https://images.unsplash.com/photo-1589998059171-988d887df646?q=80&w=600",
+        image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=600&auto=format&fit=crop",
         stats: "Buku",
         trusted: true,
         verified: true
       },
       {
         title: "31 Kegalagalan Pebisnis Apotek Going Corporate",
-        image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=600",
+        image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=600&auto=format&fit=crop",
         stats: "Buku",
         trusted: true,
         verified: true
       },
       {
         title: "Buku Whatsapp Marketing Apotek",
-        image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=600",
+        image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=600&auto=format&fit=crop",
         stats: "Buku",
         trusted: true,
         verified: true
       },
       {
         title: "Buku Autopilot Bisnis Apotek",
-        image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=600",
+        image: "https://images.unsplash.com/photo-1516979187457-637abb4f9353?q=80&w=600&auto=format&fit=crop",
         stats: "Buku",
         trusted: true,
         verified: true
       },
       {
         title: "Buku Kitab HRD",
-        image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=600",
+        image: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?q=80&w=600&auto=format&fit=crop",
         stats: "Buku",
         trusted: true,
         verified: true
@@ -295,10 +310,10 @@ Ramai bukan berarti untung. Manajemen harus mulai beralih dari sekadar mengejar 
   
   kontak: {
     address: "Jl. Bisnis Apotek No. 123, Yogyakarta, Indonesia",
-    phone: "+62 812-3456-7890",
-    email: "admin@bisnis-apotek.com",
-    whatsapp: "6281234567890", // Ganti dengan nomor asli Anda
-    consultationLink: "https://wa.me/6281234567890"
+    phone: "+62 878-2674-9023",
+    email: "bisnis@indahmedikaindonesia.co.id",
+    whatsapp: "6287826749023",
+    consultationLink: "https://wa.me/6287826749023"
   },
 
   ekosistem: {
