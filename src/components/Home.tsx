@@ -1,70 +1,177 @@
 import { motion } from 'motion/react';
-import { ChevronRight, ArrowRight, CheckCircle2, Star, Quote } from 'lucide-react';
+import { ChevronRight, ArrowRight, CheckCircle2, Star, Quote, Signal, Users, ShieldCheck, PlayCircle } from 'lucide-react';
 import { siteContent } from '../constants/content';
 import { Link } from 'react-router-dom';
 
 export const Home = () => {
   return (
-    <div className="flex flex-col">
-      {/* Hero Section */}
-      <section id="home" className="grid lg:grid-cols-2 min-h-[calc(100vh-80px)]">
-        {/* Left Content */}
-        <div className="p-8 md:p-14 lg:p-20 flex flex-col justify-center border-r border-editorial-border bg-white">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+    <div className="flex flex-col bg-[#F8FAFB]">
+      {/* Hero Section - Redesigned: Centered, Focused, Softer Shape */}
+      <section id="home" className="pt-20 pb-20 px-4 md:px-10 lg:px-20 relative overflow-hidden">
+        {/* Background Subtle Shadow Effect */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white to-transparent opacity-50 -z-10" />
+        
+        <div className="container mx-auto max-w-5xl">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
+            className="bg-white rounded-[60px] p-12 md:p-24 text-center shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] relative overflow-hidden"
           >
-            <span className="font-serif italic text-editorial-secondary text-lg md:text-xl mb-4 block">
-              {siteContent.home.hero.eyebrow}
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-poppins font-bold text-editorial-primary mb-8 leading-[1.1] tracking-tight text-balance">
-              {siteContent.home.hero.headline}
-            </h1>
-            <p className="text-base md:text-lg text-editorial-muted max-w-sm mb-12 leading-relaxed font-serif italic">
-              {siteContent.home.hero.description}
-            </p>
-            
-            <div className="flex flex-wrap items-center gap-4">
-              <Link to="/kontak" className="editorial-btn-primary w-full md:w-auto text-center">
-                {siteContent.home.hero.ctaPrimary}
-              </Link>
-              <Link to="/layanan/audit-optimasi-omzet" className="editorial-btn-secondary w-full md:w-auto text-center">
-                {siteContent.home.hero.ctaSecondary}
-              </Link>
+            {/* Soft decorative blur */}
+            <div className="absolute -top-24 -left-24 w-64 h-64 bg-editorial-secondary/5 rounded-full blur-[80px]" />
+            <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-editorial-primary/5 rounded-full blur-[80px]" />
+
+            <div className="relative z-10 space-y-10">
+              <motion.span 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="inline-block px-6 py-2 rounded-full bg-editorial-bg text-editorial-secondary font-bold text-xs uppercase tracking-widest"
+              >
+                {siteContent.home.hero.eyebrow}
+              </motion.span>
+              
+              <motion.h1 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="text-4xl md:text-7xl font-poppins font-bold text-editorial-primary leading-[1.1] tracking-tight"
+              >
+                {siteContent.home.hero.headline.split(' ').map((word, i) => (
+                  <span key={i} className={word === 'Profit' || word === 'Potensi' ? 'text-editorial-secondary' : ''}>
+                    {word}{' '}
+                  </span>
+                ))}
+              </motion.h1>
+              
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+                className="text-lg md:text-2xl text-editorial-muted max-w-3xl mx-auto leading-relaxed font-serif italic"
+              >
+                "{siteContent.home.hero.description}"
+              </motion.p>
+              
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 }}
+                className="flex flex-wrap items-center justify-center gap-6 pt-6"
+              >
+                <Link to="/kontak" className="editorial-btn-primary px-12 py-5 rounded-full shadow-2xl hover:scale-105 transition-transform text-lg">
+                  {siteContent.home.hero.ctaPrimary}
+                </Link>
+                <Link to="/layanan" className="editorial-btn-secondary px-12 py-5 rounded-full border-2 bg-transparent text-editorial-primary border-editorial-primary hover:bg-editorial-primary hover:text-white transition-all text-lg flex items-center gap-2">
+                  <PlayCircle className="w-5 h-5" /> Lihat Semua Layanan
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
         </div>
+      </section>
 
-        {/* Right Content - Services Highlights as Boxes with Shadows */}
-        <div className="bg-[#EBF2F0] lg:bg-editorial-bg p-8 md:p-14 lg:p-16 flex flex-col justify-center gap-8">
-          <div className="grid gap-6">
+      {/* Main Services Row - Featured 3 */}
+      <section className="pb-24 px-4 md:px-10 lg:px-20">
+        <div className="container mx-auto">
+          <div className="mb-16 text-center">
+            <h2 className="text-3xl md:text-4xl font-poppins font-bold text-editorial-primary mb-4 tracking-tight italic">LAYANAN UTAMA KAMI</h2>
+            <p className="text-editorial-muted font-bold uppercase tracking-widest text-xs">Pondasi Kokoh untuk Bisnis Apotek Anda</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
             {siteContent.layanan.items.map((service, index) => (
               <Link 
                 to={`/layanan/${service.slug}`} 
                 key={service.id}
+                className="h-full"
               >
                 <motion.div 
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1, duration: 0.6 }}
                   viewport={{ once: true }}
-                  className="editorial-shadow-card flex flex-col group hover:bg-white transition-all cursor-pointer h-full"
+                  className="bg-white p-10 rounded-[40px] border border-editorial-border hover:border-editorial-secondary hover:shadow-2xl transition-all group h-full relative overflow-hidden flex flex-col shadow-sm"
                 >
-                  <div className="flex justify-between items-start mb-4">
-                    <span className="font-serif text-sm text-editorial-secondary font-bold">{service.id}</span>
-                    <div className="w-8 h-8 rounded-full bg-editorial-secondary/10 flex items-center justify-center text-editorial-secondary group-hover:bg-editorial-secondary group-hover:text-white transition-all">
-                      <ArrowRight className="w-4 h-4" />
+                  <div className="relative z-10 flex flex-col h-full">
+                    <span className="font-serif text-4xl text-editorial-secondary/20 font-black mb-8 block group-hover:text-editorial-secondary transition-colors">
+                      {service.id}
+                    </span>
+                    <h3 className="text-2xl font-poppins font-bold mb-6 text-editorial-primary group-hover:text-editorial-secondary transition-colors italic tracking-tight uppercase leading-none">
+                      {service.title}
+                    </h3>
+                    <p className="text-editorial-muted leading-relaxed font-serif italic mb-10 flex-1 text-lg">
+                      "{service.description}"
+                    </p>
+                    <div className="flex items-center text-editorial-secondary font-bold text-[10px] uppercase tracking-[0.3em] group-hover:translate-x-2 transition-transform">
+                      Lihat Program <ArrowRight className="w-5 h-5 ml-3" />
                     </div>
                   </div>
-                  <h3 className="text-xl font-poppins font-bold mb-3 text-editorial-primary group-hover:text-editorial-secondary transition-colors italic">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-editorial-muted leading-relaxed font-serif italic">
-                    "{service.description}"
-                  </p>
                 </motion.div>
               </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Services - Grid Style based on user image */}
+      <section className="py-24 px-4 md:px-10 lg:px-20 bg-white">
+        <div className="container mx-auto">
+          <div className="mb-16 text-center">
+            <h2 className="text-3xl md:text-5xl font-poppins font-bold text-editorial-primary mb-4 tracking-tight uppercase italic">Program & Produk BBA Lainnya</h2>
+            <p className="text-editorial-muted font-bold uppercase tracking-widest text-xs">Pilihan edukasi terlengkap untuk setiap kebutuhan</p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+            {siteContent.layanan.additionalItems?.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: (index % 3) * 0.1, duration: 0.5 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-3xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-slate-100 flex flex-col group hover:shadow-[0_15px_45px_rgba(0,0,0,0.1)] transition-all"
+              >
+                {/* Image Top */}
+                <div className="aspect-video w-full overflow-hidden relative">
+                  <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" referrerPolicy="no-referrer" />
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors" />
+                </div>
+
+                {/* Content */}
+                <div className="p-8 flex-1 flex flex-col">
+                  <h3 className="text-xl font-poppins font-bold text-slate-800 mb-8 min-h-[56px] leading-snug">
+                    {item.title}
+                  </h3>
+
+                  {/* Metadata Row */}
+                  <div className="flex items-center justify-between mt-auto pb-8 border-b border-slate-100">
+                    <div className="flex items-center gap-2">
+                       <Signal className="w-4 h-4 text-editorial-secondary" />
+                       <span className="text-[11px] font-bold text-slate-500 uppercase">{item.stats}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                       <Users className="w-4 h-4 text-editorial-secondary" />
+                       <span className="text-[11px] font-bold text-slate-500 uppercase">Trusted</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                       <ShieldCheck className="w-4 h-4 text-editorial-secondary" />
+                       <span className="text-[11px] font-bold text-slate-500 uppercase">Verified</span>
+                    </div>
+                  </div>
+
+                  {/* Golden Button */}
+                  <a 
+                    href={siteContent.kontak.consultationLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-6 w-full py-4 bg-editorial-secondary text-white rounded-xl font-poppins font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-3 hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-editorial-secondary/20"
+                  >
+                    <Quote className="w-4 h-4 fill-current rotate-180" /> KONSULTASI GRATIS
+                  </a>
+                </div>
+              </motion.div>
             ))}
           </div>
         </div>

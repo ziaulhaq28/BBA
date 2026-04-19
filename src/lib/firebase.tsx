@@ -78,6 +78,8 @@ export const FirebaseProvider = ({ children }: { children: ReactNode }) => {
       console.error("Login detail error:", error);
       if (error.code === 'auth/popup-blocked') {
         alert("Pop-up login diblokir oleh browser. Silakan izinkan pop-up untuk situs ini agar bisa login.");
+      } else if (error.code === 'auth/popup-closed-by-user') {
+        alert("Proses login dibatalkan karena jendela login ditutup. Silakan coba klik login kembali dan pastikan pilih akun Google Anda sampai selesai.");
       } else {
         alert("Terjadi kesalahan saat login: " + error.message);
       }

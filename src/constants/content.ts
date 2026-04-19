@@ -62,7 +62,7 @@ export const siteContent = {
         title: "Pendirian Apotek Baru",
         description: "Panduan legalitas komprehensif, desain layout fungsional, strategi pengadaan stok awal, hingga rekrutmen SDM yang kompeten.",
         fullDescription: "Membangun apotek dari titik nol membutuhkan ketelitian dalam setiap langkah. Kami membantu Anda menavigasi proses perizinan, memilih lokasi yang strategis melalui data trafik, hingga merancang tata letak (layout) apotek yang memenuhi standar APA (Apoteker Pengelola Apotek) dan menarik bagi pelanggan.",
-        visualization: "https://images.unsplash.com/photo-1587810633474-06c641611005?q=80&w=1200",
+        visualization: "https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?q=80&w=1200&auto=format&fit=crop",
         steps: [
           "Survey Lokasi & Analisis Kompetitor",
           "Pengurusan Izin & Sertifikasi",
@@ -97,6 +97,169 @@ export const siteContent = {
           "Manajemen Stok & Expired Date",
           "Digitalisasi Laporan Keuangan"
         ]
+      }
+    ],
+    additionalItems: [
+      {
+        title: "Bootcamp Buka Bisnis Apotek untuk Pemula",
+        image: "https://images.unsplash.com/photo-1524178232457-3aa2a0993850?q=80&w=600",
+        stats: "118+",
+        trusted: true,
+        verified: true
+      },
+      {
+        title: "Jasa Pencatatan Keuangan Bisnis Apotek",
+        image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=600",
+        stats: "118+",
+        trusted: true,
+        verified: true
+      },
+      {
+        title: "Sekolah Jenderal Bisnis Apotek Kelas Purchasing dan Inventory",
+        image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=600",
+        stats: "118+",
+        trusted: true,
+        verified: true
+      },
+      {
+        title: "Sekolah Jenderal Bisnis Apotek Kelas HRD",
+        image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=600",
+        stats: "118+",
+        trusted: true,
+        verified: true
+      },
+      {
+        title: "Sekolah Jenderal Bisnis Apotek Kelas Keuangan",
+        image: "https://images.unsplash.com/photo-1554224154-26039560d8b2?q=80&w=600",
+        stats: "118+",
+        trusted: true,
+        verified: true
+      },
+      {
+        title: "Sekolah Jenderal Bisnis Apotek Kelas Marketing",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600",
+        stats: "118+",
+        trusted: true,
+        verified: true
+      },
+      {
+        title: "Sekolah Jenderal Bisnis Apotek Kelas Apoteker Pengelola Apotek/Leader/Supervisor",
+        image: "https://images.unsplash.com/photo-1573497620053-ea5300f94f21?q=80&w=600",
+        stats: "118+",
+        trusted: true,
+        verified: true
+      },
+      {
+        title: "Sekolah Jenderal Bisnis Apotek Kelas Manager Operasional Apotek",
+        image: "https://images.unsplash.com/photo-1454165833767-027e69272332?q=80&w=600",
+        stats: "118+",
+        trusted: true,
+        verified: true
+      },
+      {
+        title: "Set Up Bisnis Apotek (Perizinan,Sdm, Inventory, Brand Sampai Grand Opening)",
+        image: "https://images.unsplash.com/photo-1587810633474-06c641611005?q=80&w=600",
+        stats: "20+",
+        trusted: true,
+        verified: true
+      },
+      {
+        title: "Webinar Buka Apotek Langsung Laris (Online)",
+        image: "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?q=80&w=600",
+        stats: "Online",
+        trusted: true,
+        verified: true
+      },
+      {
+        title: "Pendampingan Jago Jualan (Online)",
+        image: "https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=600",
+        stats: "Online",
+        trusted: true,
+        verified: true
+      },
+      {
+        title: "Setahun Melek Keuangan (SMK) (Online)",
+        image: "https://images.unsplash.com/photo-1554224155-8d04cbd22606?q=80&w=600",
+        stats: "Online",
+        trusted: true,
+        verified: true
+      },
+      {
+        title: "Software Gampang Apotek",
+        image: "https://images.unsplash.com/photo-1551288049-bbbda5366392?q=80&w=600",
+        stats: "Software",
+        trusted: true,
+        verified: true
+      },
+      {
+        title: "Private Coaching",
+        image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=600",
+        stats: "Verified",
+        trusted: true,
+        verified: true
+      },
+      {
+        title: "Investor Club Pebisnis Apotek",
+        image: "https://images.unsplash.com/photo-1553729459-efe14ef6055d?q=80&w=600",
+        stats: "Trusted",
+        trusted: true,
+        verified: true
+      },
+      {
+        title: "Sekolah Owner Bisnis Apotek (SOBA)",
+        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=600",
+        stats: "SOBA",
+        trusted: true,
+        verified: true
+      },
+      {
+        title: "Bisnis Audit Apotek",
+        image: "https://images.unsplash.com/photo-1454165833767-027e69272332?q=80&w=600",
+        stats: "Audit",
+        trusted: true,
+        verified: true
+      },
+      {
+        title: "Workshop Autopilot Bisnis Apotek",
+        image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=600",
+        stats: "Workshop",
+        trusted: true,
+        verified: true
+      },
+      {
+        title: "Buku Understanding Keuangan Apotek",
+        image: "https://images.unsplash.com/photo-1589998059171-988d887df646?q=80&w=600",
+        stats: "Buku",
+        trusted: true,
+        verified: true
+      },
+      {
+        title: "31 Kegalagalan Pebisnis Apotek Going Corporate",
+        image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=600",
+        stats: "Buku",
+        trusted: true,
+        verified: true
+      },
+      {
+        title: "Buku Whatsapp Marketing Apotek",
+        image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=600",
+        stats: "Buku",
+        trusted: true,
+        verified: true
+      },
+      {
+        title: "Buku Autopilot Bisnis Apotek",
+        image: "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=600",
+        stats: "Buku",
+        trusted: true,
+        verified: true
+      },
+      {
+        title: "Buku Kitab HRD",
+        image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=600",
+        stats: "Buku",
+        trusted: true,
+        verified: true
       }
     ]
   },
