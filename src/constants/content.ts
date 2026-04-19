@@ -9,7 +9,7 @@ export const siteContent = {
     name: "BELAJAR BISNIS APOTEK",
     logoAlt: "Logo Belajar Bisnis Apotek",
     // User harus mengunggah file logo dengan nama logo.png di folder public atau src
-    logoUrl: "https://i.ibb.co/LzNf9F8/logo-bba.png", // Fallback placeholder
+    logoUrl: "https://i.ibb.co.com/mF5TyRSW/Gemini-Generated-Image-r7rqi4r7rqi4r7rq.png", // Fallback placeholder
   },
   
   home: {
