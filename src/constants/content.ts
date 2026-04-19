@@ -58,18 +58,45 @@ export const siteContent = {
     items: [
       {
         id: "01",
+        slug: "pendirian-apotek-baru",
         title: "Pendirian Apotek Baru",
-        description: "Panduan legalitas komprehensif, desain layout fungsional, strategi pengadaan stok awal, hingga rekrutmen SDM yang kompeten."
+        description: "Panduan legalitas komprehensif, desain layout fungsional, strategi pengadaan stok awal, hingga rekrutmen SDM yang kompeten.",
+        fullDescription: "Membangun apotek dari titik nol membutuhkan ketelitian dalam setiap langkah. Kami membantu Anda menavigasi proses perizinan, memilih lokasi yang strategis melalui data trafik, hingga merancang tata letak (layout) apotek yang memenuhi standar APA (Apoteker Pengelola Apotek) dan menarik bagi pelanggan.",
+        visualization: "https://images.unsplash.com/photo-1587810633474-06c641611005?q=80&w=1200",
+        steps: [
+          "Survey Lokasi & Analisis Kompetitor",
+          "Pengurusan Izin & Sertifikasi",
+          "Grand Design & Instalasi Farmasi",
+          "Rekrutmen & Pelatihan Tim"
+        ]
       },
       {
         id: "02",
+        slug: "audit-optimasi-omzet",
         title: "Audit & Optimasi Omzet",
-        description: "Mendiagnosa akar masalah stagnansi bisnis Anda dan menerapkan strategi pertumbuhan penjualan yang terukur serta berkelanjutan."
+        description: "Mendiagnosa akar masalah stagnansi bisnis Anda dan menerapkan strategi pertumbuhan penjualan yang terukur serta berkelanjutan.",
+        fullDescription: "Banyak apotek yang ramai namun tidak menghasilkan profit yang sehat. Layanan audit kami membedah struktur biaya, margin produk, hingga efisiensi kerja tim. Kami memberikan rekomendasi berbasis data untuk meningkatkan omzet tanpa harus membakar uang pemasaran.",
+        visualization: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
+        steps: [
+          "Audit Keuangan & Margin Produk",
+          "Analisis Performa SDM",
+          "Strategi Marketing Localized",
+          "Evaluasi Harian & Mingguan"
+        ]
       },
       {
         id: "03",
+        slug: "sistemasi-operasional",
         title: "Sistemasi Operasional",
-        description: "Pembuatan SOP profesional, implementasi sistem IT terkini, dan pelatihan manajemen stok untuk efisiensi maksimal."
+        description: "Pembuatan SOP profesional, implementasi sistem IT terkini, dan pelatihan manajemen stok untuk efisiensi maksimal.",
+        fullDescription: "Apotek yang sukses adalah apotek yang bisa berjalan tanpa harus ada owner di dalamnya 24 jam. Kami membantu menyusun Standar Operasional Prosedur (SOP) yang ketat namun fleksibel, mengintegrasikan sistem Kasir & IT yang handal, serta mengelola stok agar tidak ada modal yang 'mati'.",
+        visualization: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200",
+        steps: [
+          "Penyusunan SOP Pelayanan & Gudang",
+          "Integrasi Software Apotek Modern",
+          "Manajemen Stok & Expired Date",
+          "Digitalisasi Laporan Keuangan"
+        ]
       }
     ]
   },
@@ -98,16 +125,17 @@ Jika apotek Anda hanya ramai menjual produk-produk bermargin tipis (seperti susu
 Ramai bukan berarti untung. Manajemen harus mulai beralih dari sekadar mengejar 'Omzet' menjadi mengejar 'Gross Profit' dan 'Net Profit' yang sehat. Di BBA, kami membantu Anda membedah struktur keuangan ini agar setiap tetes keringat tim berbuah profit yang nyata.
         `,
         date: "15 April 2026",
-        img: "https://picsum.photos/seed/analysis/800/500"
+        img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200"
       }
     ]
   },
   
   kontak: {
     address: "Jl. Bisnis Apotek No. 123, Yogyakarta, Indonesia",
-    phone: "+62 812-XXXX-XXXX",
-    email: "info@bisnis-apotek.com",
-    consultationLink: "https://wa.me/62812XXXXXXXX"
+    phone: "+62 812-3456-7890",
+    email: "admin@bisnis-apotek.com",
+    whatsapp: "6281234567890", // Ganti dengan nomor asli Anda
+    consultationLink: "https://wa.me/6281234567890"
   },
 
   ekosistem: {

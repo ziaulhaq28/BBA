@@ -26,10 +26,10 @@ export const Home = () => {
             </p>
             
             <div className="flex flex-wrap items-center gap-4">
-              <a href={siteContent.kontak.consultationLink} target="_blank" rel="noopener noreferrer" className="editorial-btn-primary w-full md:w-auto text-center">
+              <Link to="/kontak" className="editorial-btn-primary w-full md:w-auto text-center">
                 {siteContent.home.hero.ctaPrimary}
-              </a>
-              <Link to="/layanan" className="editorial-btn-secondary w-full md:w-auto text-center">
+              </Link>
+              <Link to="/layanan/audit-optimasi-omzet" className="editorial-btn-secondary w-full md:w-auto text-center">
                 {siteContent.home.hero.ctaSecondary}
               </Link>
             </div>
@@ -40,27 +40,31 @@ export const Home = () => {
         <div className="bg-[#EBF2F0] lg:bg-editorial-bg p-8 md:p-14 lg:p-16 flex flex-col justify-center gap-8">
           <div className="grid gap-6">
             {siteContent.layanan.items.map((service, index) => (
-              <motion.div 
+              <Link 
+                to={`/layanan/${service.slug}`} 
                 key={service.id}
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="editorial-shadow-card flex flex-col group hover:bg-white transition-all cursor-default"
               >
-                <div className="flex justify-between items-start mb-4">
-                  <span className="font-serif text-sm text-editorial-secondary font-bold">{service.id}</span>
-                  <div className="w-8 h-8 rounded-full bg-editorial-secondary/10 flex items-center justify-center text-editorial-secondary group-hover:bg-editorial-secondary group-hover:text-white transition-all">
-                    <ArrowRight className="w-4 h-4" />
+                <motion.div 
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="editorial-shadow-card flex flex-col group hover:bg-white transition-all cursor-pointer h-full"
+                >
+                  <div className="flex justify-between items-start mb-4">
+                    <span className="font-serif text-sm text-editorial-secondary font-bold">{service.id}</span>
+                    <div className="w-8 h-8 rounded-full bg-editorial-secondary/10 flex items-center justify-center text-editorial-secondary group-hover:bg-editorial-secondary group-hover:text-white transition-all">
+                      <ArrowRight className="w-4 h-4" />
+                    </div>
                   </div>
-                </div>
-                <h3 className="text-xl font-poppins font-bold mb-3 text-editorial-primary group-hover:text-editorial-secondary transition-colors italic">
-                  {service.title}
-                </h3>
-                <p className="text-sm text-editorial-muted leading-relaxed">
-                  {service.description}
-                </p>
-              </motion.div>
+                  <h3 className="text-xl font-poppins font-bold mb-3 text-editorial-primary group-hover:text-editorial-secondary transition-colors italic">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-editorial-muted leading-relaxed font-serif italic">
+                    "{service.description}"
+                  </p>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>

@@ -1,8 +1,9 @@
 import { ReactNode, useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { Search, Menu, X, Phone, MessageSquare, Globe, Info, Building2 } from 'lucide-react';
+import { Search, Menu, X, Phone, MessageSquare, Globe, Info, Building2, LogOut, User as UserIcon, ShieldCheck } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { siteContent } from '../constants/content';
+import { useFirebase } from '../lib/firebase';
 
 interface LayoutProps {
   children: ReactNode;
@@ -10,6 +11,7 @@ interface LayoutProps {
 
 export const Layout = ({ children }: LayoutProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const { user, profile, isAdmin, login, logout } = useFirebase();
 
   const navLinks = [
     { name: 'Home', href: '/' },
@@ -18,6 +20,7 @@ export const Layout = ({ children }: LayoutProps) => {
     { name: 'Ekosistem BBA', href: '/ekosistem' },
     { name: 'Artikel', href: '/artikel' },
     { name: 'Kontak', href: '/kontak' },
+    ...(isAdmin ? [{ name: 'Admin Dashboard', href: '/admin' }] : []),
   ];
 
   return (
@@ -27,7 +30,6 @@ export const Layout = ({ children }: LayoutProps) => {
         <div className="container mx-auto px-4 lg:px-10 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group">
             <div className="w-[40px] h-[40px] overflow-hidden rounded-lg bg-editorial-secondary flex items-center justify-center">
-              {/* Logo yang diunggah pengguna. Fallback ke teks jika gambar tidak ada */}
               <img 
                 src={siteContent.branding.logoUrl} 
                 alt={siteContent.branding.logoAlt}
@@ -59,13 +61,38 @@ export const Layout = ({ children }: LayoutProps) => {
             ))}
           </div>
 
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6">
             <button className="text-editorial-primary hover:opacity-70 transition-opacity">
               <Search className="w-5 h-5" />
             </button>
-            <a href="#" className="font-poppins font-bold text-[12px] text-editorial-secondary hover:underline">
-              LOGIN
-            </a>
+            
+            {user ? (
+              <div className="flex items-center gap-4">
+                <div className="flex flex-col items-end">
+                  <span className="text-[10px] font-bold text-editorial-primary flex items-center gap-1 uppercase tracking-widest">
+                    {profile?.displayName || user.displayName}
+                    {isAdmin && <ShieldCheck className="w-3 h-3 text-editorial-secondary" />}
+                  </span>
+                  <button onClick={logout} className="text-[9px] font-bold text-red-500 hover:underline uppercase tracking-widest flex items-center gap-1">
+                    <LogOut className="w-2 h-2" /> Logout
+                  </button>
+                </div>
+                {user.photoURL ? (
+                  <img src={user.photoURL} alt="Profile" className="w-8 h-8 rounded-full border border-editorial-border" referrerPolicy="no-referrer" />
+                ) : (
+                  <div className="w-8 h-8 rounded-full bg-editorial-bg flex items-center justify-center border border-editorial-border">
+                    <UserIcon className="w-4 h-4 text-editorial-muted" />
+                  </div>
+                )}
+              </div>
+            ) : (
+              <button 
+                onClick={login}
+                className="font-poppins font-bold text-[12px] text-editorial-secondary hover:underline flex items-center gap-2"
+              >
+                <UserIcon className="w-4 h-4" /> LOGIN
+              </button>
+            )}
           </div>
 
           <button 
@@ -79,7 +106,12 @@ export const Layout = ({ children }: LayoutProps) => {
         {/* Mobile Menu */}
         <AnimatePresence>
           {isOpen && (
-            <div className="lg:hidden absolute top-[80px] left-0 right-0 bg-white border-b border-editorial-border z-50 shadow-xl">
+            <motion.div 
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="lg:hidden absolute top-[80px] left-0 right-0 bg-white border-b border-editorial-border z-50 shadow-xl overflow-hidden"
+            >
               <div className="p-6 space-y-6 bg-white">
                 {navLinks.map((link) => (
                   <NavLink 
@@ -91,21 +123,37 @@ export const Layout = ({ children }: LayoutProps) => {
                     {link.name}
                   </NavLink>
                 ))}
-                <div className="pt-4 border-t border-editorial-border">
+                
+                <div className="pt-4 border-t border-editorial-border flex flex-col gap-4">
+                  {user && (
+                    <div className="flex items-center gap-3 mb-2">
+                      <img src={user.photoURL || ''} alt="Profile" className="w-10 h-10 rounded-full" referrerPolicy="no-referrer" />
+                      <div>
+                        <p className="font-bold text-editorial-primary text-sm uppercase">{user.displayName}</p>
+                        {isAdmin && <p className="text-[10px] font-bold text-editorial-secondary uppercase">Administrator</p>}
+                      </div>
+                    </div>
+                  )}
+
                   <a 
                     href={siteContent.kontak.consultationLink} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="block w-full text-center editorial-btn-primary mb-3 py-3"
+                    className="block w-full text-center editorial-btn-primary py-3"
                   >
                     Konsultasi Gratis
                   </a>
+                  
                   <div className="flex justify-center">
-                    <a href="#" className="text-xs font-bold text-editorial-secondary font-poppins">LOGIN</a>
+                    {user ? (
+                      <button onClick={logout} className="text-xs font-bold text-red-500 uppercase tracking-widest font-poppins">Logout</button>
+                    ) : (
+                      <button onClick={login} className="text-xs font-bold text-editorial-secondary uppercase tracking-widest font-poppins">Login with Google</button>
+                    )}
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           )}
         </AnimatePresence>
       </nav>
