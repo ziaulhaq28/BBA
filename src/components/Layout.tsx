@@ -1,0 +1,178 @@
+import { ReactNode, useState } from 'react';
+import { NavLink, Link } from 'react-router-dom';
+import { Search, Menu, X, Phone, MessageSquare, Globe, Info, Building2 } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
+import { siteContent } from '../constants/content';
+
+interface LayoutProps {
+  children: ReactNode;
+}
+
+export const Layout = ({ children }: LayoutProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const navLinks = [
+    { name: 'Home', href: '/' },
+    { name: 'Tentang BBA', href: '/tentang' },
+    { name: 'Layanan', href: '/layanan' },
+    { name: 'Ekosistem BBA', href: '/ekosistem' },
+    { name: 'Artikel', href: '/artikel' },
+    { name: 'Kontak', href: '/kontak' },
+  ];
+
+  return (
+    <div className="min-h-screen bg-editorial-bg flex flex-col font-sans">
+      {/* Header / Navbar */}
+      <nav className="editorial-nav">
+        <div className="container mx-auto px-4 lg:px-10 flex items-center justify-between">
+          <Link to="/" className="flex items-center gap-3 group">
+            <div className="w-[40px] h-[40px] overflow-hidden rounded-lg bg-editorial-secondary flex items-center justify-center">
+              {/* Logo yang diunggah pengguna. Fallback ke teks jika gambar tidak ada */}
+              <img 
+                src={siteContent.branding.logoUrl} 
+                alt={siteContent.branding.logoAlt}
+                className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+                onError={(e) => {
+                   (e.target as HTMLImageElement).src = "https://via.placeholder.com/40/00B894/FFFFFF?text=BBA";
+                }}
+              />
+            </div>
+            <span className="font-poppins font-bold text-lg md:text-xl tracking-tight text-editorial-primary uppercase leading-tight">
+              {siteContent.branding.name}
+            </span>
+          </Link>
+
+          <div className="hidden lg:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <NavLink 
+                key={link.name} 
+                to={link.href}
+                className={({ isActive }) => `text-[13px] font-bold uppercase tracking-[0.05em] transition-all relative py-1 ${
+                  isActive 
+                  ? 'text-editorial-primary border-b-2 border-editorial-secondary' 
+                  : 'text-editorial-text opacity-70 hover:opacity-100 hover:text-editorial-primary'
+                }`}
+              >
+                {link.name}
+              </NavLink>
+            ))}
+          </div>
+
+          <div className="hidden lg:flex items-center gap-8">
+            <button className="text-editorial-primary hover:opacity-70 transition-opacity">
+              <Search className="w-5 h-5" />
+            </button>
+            <a href="#" className="font-poppins font-bold text-[12px] text-editorial-secondary hover:underline">
+              LOGIN
+            </a>
+          </div>
+
+          <button 
+            className="lg:hidden p-2 text-editorial-primary"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X className="w-7 h-7" /> : <Menu className="w-7 h-7" />}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {isOpen && (
+            <div className="lg:hidden absolute top-[80px] left-0 right-0 bg-white border-b border-editorial-border z-50 shadow-xl">
+              <div className="p-6 space-y-6 bg-white">
+                {navLinks.map((link) => (
+                  <NavLink 
+                    key={link.name} 
+                    to={link.href}
+                    className="block text-sm font-bold uppercase tracking-wider text-editorial-primary"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.name}
+                  </NavLink>
+                ))}
+                <div className="pt-4 border-t border-editorial-border">
+                  <a 
+                    href={siteContent.kontak.consultationLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="block w-full text-center editorial-btn-primary mb-3 py-3"
+                  >
+                    Konsultasi Gratis
+                  </a>
+                  <div className="flex justify-center">
+                    <a href="#" className="text-xs font-bold text-editorial-secondary font-poppins">LOGIN</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+        </AnimatePresence>
+      </nav>
+
+      {/* Main Content */}
+      <main className="flex-1">
+        {children}
+      </main>
+
+      {/* Footer */}
+      <footer className="bg-editorial-primary pt-20 pb-10 text-white/60">
+        <div className="container mx-auto px-4 lg:px-10">
+          <div className="grid lg:grid-cols-4 gap-20 mb-20 text-center lg:text-left">
+            <div className="lg:col-span-2">
+              <div className="flex items-center justify-center lg:justify-start gap-3 mb-8">
+                <img 
+                  src={siteContent.branding.logoUrl} 
+                  alt={siteContent.branding.logoAlt}
+                  className="w-[48px] h-[48px] object-cover rounded-lg bg-editorial-secondary p-1"
+                  referrerPolicy="no-referrer"
+                />
+                <span className="font-poppins font-bold text-2xl tracking-tighter text-white uppercase italic">
+                  {siteContent.branding.name}
+                </span>
+              </div>
+              <p className="max-w-md mx-auto lg:mx-0 text-white/40 mb-10 text-sm leading-relaxed">
+                Platform Sekolah Owner Bisnis Apotek terbaik di Indonesia. Memberikan layanan pendampingan, audit bisnis, dan edukasi bagi pengusaha farmasi modern yang ingin bisnisnya sehat dan berkelanjutan.
+              </p>
+              <div className="flex justify-center lg:justify-start gap-10 text-[11px] font-bold uppercase tracking-[0.2em] text-white">
+                <a href="#" className="hover:text-editorial-secondary transition-colors">WhatsApp</a>
+                <a href="#" className="hover:text-editorial-secondary transition-colors">Instagram</a>
+                <a href="#" className="hover:text-editorial-secondary transition-colors">LinkedIn</a>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="font-poppins font-bold text-white mb-8 uppercase tracking-[0.2em] text-[11px]">Directory</h4>
+              <ul className="space-y-4 text-sm font-medium">
+                <li><Link to="/" className="hover:text-white transition-colors">Front Page</Link></li>
+                <li><Link to="/tentang" className="hover:text-white transition-colors">About the Studio</Link></li>
+                <li><Link to="/layanan" className="hover:text-white transition-colors">Services Index</Link></li>
+                <li><Link to="/artikel" className="hover:text-white transition-colors">Insights Archive</Link></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-poppins font-bold text-white mb-8 uppercase tracking-[0.2em] text-[11px]">Office</h4>
+              <ul className="space-y-4 text-sm font-medium">
+                <li className="flex justify-center lg:justify-start gap-2">
+                  <span>P:</span> <span>{siteContent.kontak.phone}</span>
+                </li>
+                <li className="flex justify-center lg:justify-start gap-2">
+                  <span>E:</span> <span>{siteContent.kontak.email}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold uppercase tracking-[0.25em] text-center">
+            <p>© 2026 {siteContent.branding.name} STUDIO. INDONESIA.</p>
+            <div className="flex gap-10">
+              <a href="#" className="hover:text-white">Privacy Journal</a>
+              <a href="#" className="hover:text-white">Terms of Entry</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
