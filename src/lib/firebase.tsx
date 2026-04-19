@@ -54,7 +54,7 @@ export const FirebaseProvider = ({ children }: { children: ReactNode }) => {
             email: user.email,
             displayName: user.displayName,
             photoURL: user.photoURL,
-            role: 'user', // Default role
+            role: user.email === 'dayydeii1@gmail.com' ? 'admin' : 'user', // Grant admin to owner
             createdAt: serverTimestamp(),
           };
           await setDoc(doc(db, 'users', user.uid), newProfile);

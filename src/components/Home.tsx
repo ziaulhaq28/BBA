@@ -123,7 +123,7 @@ export const Home = () => {
             >
               <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
                 <img 
-                  src="https://picsum.photos/seed/about/800/800" 
+                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=800" 
                   alt="Team BBA" 
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"

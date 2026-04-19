@@ -56,7 +56,7 @@ export const Layanan = () => {
                  </div>
               </div>
               <div className="aspect-video rounded-3xl overflow-hidden shadow-2xl">
-                 <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800" alt="Services" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                 <img src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?q=80&w=800" alt="Services" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
               </div>
            </div>
         </div>

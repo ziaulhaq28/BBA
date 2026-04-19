@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { siteContent } from '../constants/content';
 import { Phone, Mail, MapPin, ArrowRight, MessageCircle, CheckCircle } from 'lucide-react';
-import { useState } from 'react';
+import { useState, FormEvent } from 'react';
 import { submitInquiry } from '../lib/firebase';
 
 export const Kontak = () => {
@@ -13,7 +13,7 @@ export const Kontak = () => {
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setStatus('loading');
     try {

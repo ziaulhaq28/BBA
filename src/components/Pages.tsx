@@ -46,7 +46,7 @@ export const Artikel = () => {
              {[1, 2, 3].map((_, idx) => (
                 <div key={idx} className="flex gap-6 items-start pb-8 border-b border-editorial-border last:border-0 opacity-40 hover:opacity-100 transition-opacity cursor-pointer grayscale hover:grayscale-0">
                    <div className="w-32 h-20 bg-slate-100 rounded-lg overflow-hidden shrink-0">
-                      <img src={`https://picsum.photos/seed/art-${idx}/300/200`} alt="Article" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                      <img src="https://images.unsplash.com/photo-1576602976047-174ef57a4645?q=80&w=300" alt="Article" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
                    </div>
                    <div>
                       <h4 className="font-poppins font-bold text-lg mb-2 leading-tight">Membangun Budaya Kerja Apotek yang Unggul</h4>
@@ -120,7 +120,7 @@ export const Tentang = () => {
 
              <div className="grid lg:grid-cols-2 gap-24 items-center mb-24">
                 <div className="aspect-square bg-white p-4 rounded-[60px] shadow-2xl relative">
-                   <img src="https://picsum.photos/seed/about-long/800/800" alt="Tentang Kami" className="w-full h-full object-cover rounded-[50px]" referrerPolicy="no-referrer" />
+                   <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800" alt="Tentang Kami" className="w-full h-full object-cover rounded-[50px]" referrerPolicy="no-referrer" />
                    <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-editorial-secondary rounded-full flex items-center justify-center p-8 animate-pulse-soft">
                       <p className="text-white font-poppins font-black text-center text-xs tracking-widest leading-tight uppercase">EXPERIENCE THE BBA STANDARD</p>
                    </div>

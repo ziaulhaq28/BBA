@@ -36,19 +36,19 @@ export const siteContent = {
         name: "Ibu Rahma",
         role: "Owner Apotek di Bandung",
         content: "Sangat bersyukur ketemu BBA. Dulu apotek saya stuck, stok berantakan. Setelah ikut dampingan, omzet naik 40% dalam 3 bulan!",
-        avatar: "https://i.pravatar.cc/150?u=rahma"
+        avatar: "https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=150&h=150&auto=format&fit=crop"
       },
       {
         name: "Pak Budi",
         role: "Calon Owner Apotek",
         content: "BBA membimbing saya dari nol. Dari survey lokasi sampai izin keluar semua dibantu. Sangat membantu yang tidak punya background farmasi.",
-        avatar: "https://i.pravatar.cc/150?u=budi"
+        avatar: "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?q=80&w=150&h=150&auto=format&fit=crop"
       },
       {
         name: "Apoteker Siska",
         role: "Owner Apotek di Jogja",
         content: "Ilmu sistemasi apoteknya luar biasa. Sekarang saya bisa lebih fokus ke pengembangan karena operasional sudah tersistem dengan baik.",
-        avatar: "https://i.pravatar.cc/150?u=siska"
+        avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=150&h=150&auto=format&fit=crop"
       }
     ]
   },
@@ -154,28 +154,28 @@ Ramai bukan berarti untung. Manajemen harus mulai beralih dari sekadar mengejar 
         subtitle: "Fondasi & Mindset Strategis",
         description: "Dirancang untuk membangun logika bisnis yang benar. Di sini Anda belajar membangun mindset owner, memahami anatomi profit, dan menyusun urutan strategi yang presisi agar pondasi bisnis Anda tidak goyah.",
         examples: ["Sekolah Owner Bisnis Apotek", "Kelas Buka Apotek dari Nol", "Kelas Keuangan Owner"],
-        image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1541000084628-4444f2444c3d?q=80&w=1200&auto=format&fit=crop"
       },
       {
         title: "PENDAMPINGAN BISNIS",
         subtitle: "Eksekusi & Transformasi Nyata",
         description: "Kami mendampingi Anda langsung di garis depan. Mulai dari membenahi apotek yang stagnan, mengawal proses pembukaan cabang baru, hingga menjadi mitra diskusi dalam pengambilan keputusan krusial. Anda tidak lagi berjalan sendirian.",
         examples: ["Konsultasi Privat", "Dampingan Operasional", "Audit Lapangan"],
-        image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=1200&auto=format&fit=crop"
       },
       {
         title: "PRAKTIK & KEGIATAN LAPANGAN",
         subtitle: "Pembuktian Teori di Lapangan",
         description: "Bisnis adalah soal aksi, bukan sekadar narasi. Melalui Bootcamp, Mastermind, hingga Investor Forum, kami membawa Anda melihat langsung bagaimana sistem BBA diimplementasikan pada apotek-apotek percontohan kami.",
         examples: ["BBA Bootcamp", "Mastermind Financial", "Setup & Grand Opening", "Investor Forum"],
-        image: "https://images.unsplash.com/photo-1587810633474-06c641611005?q=80&w=1200&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1631549916768-4119b2e5f926?q=80&w=1200&auto=format&fit=crop"
       },
       {
         title: "KOMUNITAS OWNER APOTEK",
         subtitle: "Support System & Networking",
         description: "Bisnis akan terasa sangat melelahkan jika dijalani secara terisolasi. Bergabunglah dengan ribuan owner apotek lainnya untuk saling berbagi pengalaman, belajar dari kesalahan orang lain, dan membangun kolaborasi strategis.",
         examples: ["Wadah Diskusi Owner", "Resource Sharing", "Exclusive Gathering"],
-        image: "https://images.unsplash.com/photo-1528605248644-14dd04cb21c7?q=80&w=1200&auto=format&fit=crop"
+        image: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200&auto=format&fit=crop"
       }
     ],
     disclaimer: {

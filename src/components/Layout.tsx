@@ -36,7 +36,7 @@ export const Layout = ({ children }: LayoutProps) => {
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
                 onError={(e) => {
-                   (e.target as HTMLImageElement).src = "https://via.placeholder.com/40/00B894/FFFFFF?text=BBA";
+                   (e.target as HTMLImageElement).src = siteContent.branding.logoUrl;
                 }}
               />
             </div>
