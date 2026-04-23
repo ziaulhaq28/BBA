@@ -1,3 +1,12 @@
+/**
+ * FILE: src/components/Services.tsx
+ * TUJUAN: Halaman daftar semua layanan dan produk BBA.
+ * 
+ * PENJELASAN:
+ * - Menampilkan 3 Layanan Utama di bagian atas.
+ * - Menampilkan 20+ Program & Produk BBA Lainnya (Bootcamp, Buku, Kelas, dll) di bagian bawah.
+ * - Data diambil otomatis dari 'src/constants/content.ts'.
+ */
 import { motion } from 'motion/react';
 import { siteContent } from '../constants/content';
 import { ArrowLeft, ArrowRight, CheckCircle2, ChevronRight, Quote, ShieldCheck, Signal, Users } from 'lucide-react';

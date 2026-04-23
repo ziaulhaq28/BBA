@@ -1,3 +1,17 @@
+/**
+ * FILE: src/components/Admin.tsx
+ * TUJUAN: Halaman Dashboard untuk Admin.
+ * OUTPUT: Menampilkan daftar formulir masuk (inquiries) dari database Firebase Firestore.
+ * 
+ * ALUR KERJA:
+ * 1. File ini bergantung pada 'src/lib/firebase.tsx' untuk mendapatkan status login admin.
+ * 2. Mengambil data dari koleksi 'inquiries' di database.
+ * 3. Jika user bukan admin, akses akan ditolak.
+ * 
+ * CARA KERJA CODE:
+ * - useEffect: Menjalankan fungsi fetchInquiries saat halaman dibuka.
+ * - toggleStatus: Mengubah status pesan (Baru vs Selesai) langsung ke database.
+ */
 import { useEffect, useState } from 'react';
 import { useFirebase } from '../lib/firebase';
 import { collection, query, orderBy, getDocs, updateDoc, doc } from 'firebase/firestore';
@@ -6,21 +20,24 @@ import { motion } from 'motion/react';
 import { Mail, Phone, Calendar, CheckCircle, Clock } from 'lucide-react';
 
 export const AdminDashboard = () => {
+  // Mengambil data user dan status admin dari custom hook useFirebase
   const { user, isAdmin, loading: authLoading } = useFirebase();
   const [inquiries, setInquiries] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
+  // Fungsi untuk mengambil data dari Firestore
   useEffect(() => {
     const fetchInquiries = async () => {
-      if (!isAdmin) return;
+      if (!isAdmin) return; // Keamanan: Hanya jalankan jika admin
       try {
+        // query: Mengatur cara pengambilan data (diurutkan berdasarkan waktu terbaru)
         const q = query(collection(db, 'inquiries'), orderBy('createdAt', 'desc'));
         const querySnapshot = await getDocs(q);
         const data = querySnapshot.docs.map(doc => ({
           id: doc.id,
           ...doc.data()
         }));
-        setInquiries(data);
+        setInquiries(data); // Simpan data ke dalam state/variabel 'inquiries'
       } catch (error) {
         console.error("Error fetching inquiries:", error);
       } finally {
@@ -31,10 +48,13 @@ export const AdminDashboard = () => {
     fetchInquiries();
   }, [isAdmin]);
 
+  // Fungsi untuk mengubah status pesan
   const toggleStatus = async (id: string, currentStatus: string) => {
     const newStatus = currentStatus === 'new' ? 'processed' : 'new';
     try {
+      // Update data di server (Firestore)
       await updateDoc(doc(db, 'inquiries', id), { status: newStatus });
+      // Update tampilan di layar tanpa refresh (Optimistic UI)
       setInquiries(prev => prev.map(item => item.id === id ? { ...item, status: newStatus } : item));
     } catch (error) {
       console.error("Error updating status:", error);

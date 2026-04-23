@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { siteContent } from '../constants/content';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { ArrowRight, Clock, Tag } from 'lucide-react';
 
 export const Artikel = () => {
@@ -40,21 +40,6 @@ export const Artikel = () => {
                 </div>
              </Link>
           ))}
-          
-          {/* Placeholder for more articles */}
-          <div className="grid gap-8">
-             {[1, 2, 3].map((_, idx) => (
-                <div key={idx} className="flex gap-6 items-start pb-8 border-b border-editorial-border last:border-0 opacity-40 hover:opacity-100 transition-opacity cursor-pointer grayscale hover:grayscale-0">
-                   <div className="w-32 h-20 bg-slate-100 rounded-lg overflow-hidden shrink-0">
-                      <img src="https://images.unsplash.com/photo-1576602976047-174ef57a4645?q=80&w=300" alt="Article" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-                   </div>
-                   <div>
-                      <h4 className="font-poppins font-bold text-lg mb-2 leading-tight">Membangun Budaya Kerja Apotek yang Unggul</h4>
-                      <p className="text-xs text-editorial-muted uppercase font-bold tracking-widest">Read Article →</p>
-                   </div>
-                </div>
-             ))}
-          </div>
         </div>
       </div>
     </div>
@@ -62,8 +47,8 @@ export const Artikel = () => {
 };
 
 export const ArtikelDetail = () => {
-    // Ideally use useParams slug to find article, but here we only have one for now.
-    const article = siteContent.artikel.highlights[0];
+    const { slug } = useParams();
+    const article = siteContent.artikel.highlights.find(a => a.slug === slug) || siteContent.artikel.highlights[0];
 
     return (
         <div className="bg-white py-24 min-h-screen">
@@ -77,7 +62,7 @@ export const ArtikelDetail = () => {
                         <span>{article.date}</span>
                         <span>BY TIM BBA KONSTRUKTIF</span>
                     </div>
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-poppins font-bold text-editorial-primary leading-[1.1] mb-10 tracking-tight">
+                    <h1 className="text-4xl md:text-5xl lg:text-5xl font-poppins font-bold text-editorial-primary leading-[1.2] mb-10 tracking-tight">
                         {article.title}
                     </h1>
                     <div className="aspect-[16/9] bg-slate-100 rounded-[40px] overflow-hidden shadow-2xl mb-16">
@@ -86,16 +71,16 @@ export const ArtikelDetail = () => {
                     
                     <div className="prose prose-lg prose-slate max-w-none text-editorial-text font-serif leading-relaxed space-y-8">
                         {article.content.split('\n\n').map((para, i) => {
-                            if (para.startsWith('# ')) return <h1 key={i} className="text-4xl font-poppins font-bold mt-12 mb-6">{para.replace('# ', '')}</h1>;
-                            if (para.startsWith('## ')) return <h2 key={i} className="text-2xl font-poppins font-bold mt-12 mb-6 italic text-editorial-secondary">{para.replace('## ', '')}</h2>;
-                            return <p key={i} className="mb-6 opacity-90">{para}</p>;
+                            if (para.trim().startsWith('# ')) return <h1 key={i} className="text-3xl font-poppins font-bold mt-12 mb-6 text-editorial-primary">{para.replace('# ', '')}</h1>;
+                            if (para.trim().startsWith('## ')) return <h2 key={i} className="text-xl font-poppins font-bold mt-10 mb-5 text-editorial-primary border-l-4 border-editorial-secondary pl-6">{para.replace('## ', '')}</h2>;
+                            return <p key={i} className="mb-6 opacity-90 text-lg leading-relaxed">{para}</p>;
                         })}
                     </div>
                 </div>
                 
                 <div className="border-t border-editorial-border pt-16 text-center">
                     <Link to="/kontak" className="editorial-btn-primary inline-block">
-                        Konsultasi Strategi Margin Bersama BBA
+                        Konsultasi Strategi Bersama BBA
                     </Link>
                 </div>
             </div>

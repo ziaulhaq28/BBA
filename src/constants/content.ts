@@ -1,7 +1,15 @@
 /**
  * BBA - Belajar Bisnis Apotek
- * File ini berisi semua materi teks yang ada di website.
- * Anda dapat mengedit file ini untuk memperbarui isi website tanpa harus menyentuh kode program.
+ * FILE: src/constants/content.ts
+ * TUJUAN: Satu-satunya sumber data teks dan gambar untuk seluruh website.
+ * 
+ * CARA MENGUBAH:
+ * - Jika Anda ingin mengubah teks di website, cukup ubah tulisan di dalam tanda kutip ("") di file ini.
+ * - Jika ingin mengubah gambar, ganti URL link gambar di sini.
+ * 
+ * KENAPA INI PENTING:
+ * File ini memisahkan "Isi Website" dari "Kode Program". Dengan cara ini, Anda bisa mengedit konten 
+ * dengan aman tanpa harus mengerti logika coding yang rumit di file lain.
  */
 
 export const siteContent = {
@@ -124,7 +132,7 @@ export const siteContent = {
       },
       {
         title: "Jasa Pencatatan Keuangan Bisnis Apotek",
-        image: "https://images.unsplash.com/photo-1454165833767-027e69272332?q=80&w=600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?q=80&w=600&auto=format&fit=crop",
         stats: "118+",
         trusted: true,
         verified: true
@@ -145,7 +153,7 @@ export const siteContent = {
       },
       {
         title: "Sekolah Jenderal Bisnis Apotek Kelas Keuangan",
-        image: "https://images.unsplash.com/photo-1554224155-1d1d52988955?q=80&w=600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?q=80&w=600&auto=format&fit=crop",
         stats: "118+",
         trusted: true,
         verified: true
@@ -166,7 +174,7 @@ export const siteContent = {
       },
       {
         title: "Sekolah Jenderal Bisnis Apotek Kelas Manager Operasional Apotek",
-        image: "https://images.unsplash.com/photo-1454165833767-027e69272332?q=80&w=600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=600&auto=format&fit=crop",
         stats: "118+",
         trusted: true,
         verified: true
@@ -194,7 +202,7 @@ export const siteContent = {
       },
       {
         title: "Setahun Melek Keuangan (SMK) (Online)",
-        image: "https://images.unsplash.com/photo-1554224155-8d04cbd22606?q=80&w=600&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?q=80&w=600&auto=format&fit=crop",
         stats: "Online",
         trusted: true,
         verified: true
@@ -282,28 +290,96 @@ export const siteContent = {
   artikel: {
     highlights: [
       {
-        slug: "analisis-margin-kenapa-apotek-ramai-tapi-rugi",
+        slug: "analisis-margin",
         title: "Analisis Margin: Kenapa Apotek Ramai Tapi Rugi?",
         excerpt: "Banyak owner terjebak pada angka penjualan, padahal margin yang sehat adalah kunci utama keberlanjutan bisnis.",
-        content: `
-# Analisis Margin: Kenapa Apotek Ramai Tapi Rugi?
+        content: `# Analisis Margin: Kenapa Apotek Ramai Tapi Rugi?
 
 Banyak pemilik apotek merasa bangga ketika melihat antrean pelanggan yang panjang dan laporan penjualan harian yang tinggi. Namun, seringkali di akhir bulan, saat melakukan perhitungan arus kas, mereka mendapati bahwa saldo bank tidak menunjukkan keuntungan yang sebanding dengan kesibukan yang ada. Kenapa ini bisa terjadi?
 
 ## 1. Kesalahan Penentuan Margin (Pricing Error)
+
 Seringkali apotek menetapkan harga hanya berdasarkan "harga pasar" tanpa menghitung Break Even Point (BEP). Jika biaya operasional Anda lebih tinggi dari rata-rata pasar, namun Anda menjual dengan harga yang sama, margin kotor Anda tidak akan cukup menutupi biaya tetap.
 
 ## 2. Kebocoran Stok (Inventory Leakage)
+
 Stok yang tidak tercatat, barang kedaluwarsa yang tidak terkelola, hingga kehilangan barang adalah "silent killer" bagi keuntungan. Meskipun penjualan ramai, jika HPP (Harga Pokok Penjualan) Anda membengkak karena stok yang hilang, profit Anda akan tergerus.
 
 ## 3. Mix Produk yang Buruk
+
 Jika apotek Anda hanya ramai menjual produk-produk bermargin tipis (seperti susu atau produk promo) sementara produk bermargin tinggi jarang terjual, maka volume kerja tim akan tinggi namun profitabilitas akan tetap rendah.
 
 ## Kesimpulan
-Ramai bukan berarti untung. Manajemen harus mulai beralih dari sekadar mengejar 'Omzet' menjadi mengejar 'Gross Profit' dan 'Net Profit' yang sehat. Di BBA, kami membantu Anda membedah struktur keuangan ini agar setiap tetes keringat tim berbuah profit yang nyata.
-        `,
+
+Ramai bukan berarti untung. Manajemen harus mulai beralih dari sekadar mengejar 'Omzet' menjadi mengejar 'Gross Profit' dan 'Net Profit' yang sehat. Di BBA, kami membantu Anda membedah struktur keuangan ini agar setiap tetes keringat tim berbuah profit yang nyata.`,
         date: "15 April 2026",
         img: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200"
+      },
+      {
+        slug: "budaya-kerja-unggul",
+        title: "Membangun Budaya Kerja Apotek yang Unggul",
+        excerpt: "SDM adalah aset terpenting. Pelajari cara membangun tim yang jujur, cekatan, dan memiliki sense of belonging.",
+        content: `# Membangun Budaya Kerja Apotek yang Unggul
+
+Di balik apotek yang sukses, selalu ada tim yang solid. Budaya kerja bukan hanya soal peraturan, tapi soal bagaimana tim Anda berperilaku saat Anda tidak ada di tempat.
+
+## Pentingnya Integritas Tim
+
+Apotek adalah bisnis kepercayaan. Sekali tim Anda melakukan kecurangan, baik itu manipulasi stok atau keuangan, maka bisnis Anda berada di ujung tanduk. Budaya integritas harus dimulai dari atas, yaitu dari Anda sendiri sebagai owner.
+
+## Sistem Reward yang Terukur
+
+Jangan hanya memberikan gaji pokok. Berikan insentif yang terikat pada performa dan akurasi stok. Hal ini akan memicu tim untuk lebih teliti dan merasa memiliki bisnis tersebut.
+
+## Komunikasi Terbuka
+
+Lakukan briefing harian yang singkat namun bermakna. Dengarkan keluhan mereka di lapangan, karena merekalah yang paling tahu wajah asli pelayanan apotek Anda di mata pelanggan.`,
+        date: "18 April 2026",
+        img: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200"
+      },
+      {
+        slug: "digitalisasi-modern",
+        title: "Digitalisasi Apotek: Dari Kasir Manual ke Sistem Cloud",
+        excerpt: "Teknologi bukan lagi pilihan, tapi keharusan. Simak bagaimana sistematisasi IT bisa mengurangi human error.",
+        content: `# Digitalisasi Apotek: Dari Kasir Manual ke Sistem Cloud
+
+Era kertas dan catatan manual sudah berlalu. Jika Anda masih menggunakan cara lama, Anda membuang waktu yang berharga untuk hal administratif yang seharusnya bisa diotomatisasi.
+
+## Kecepatan Layanan
+
+Dengan sistem POS (Point of Sale) yang handal, pencarian barang dan pemberian struk hanya butuh hitungan detik. Ini meningkatkan kepuasan pelanggan secara signifikan.
+
+## Monitoring Stok Real-time
+
+Sistem cloud memungkinkan Anda melihat stok apotek kapan saja dan di mana saja. Anda tidak perlu lagi datang ke apotek hanya untuk mengecek apakah stok amoxicillin masih ada atau sudah kritis.
+
+## Analisis Penjualan Otomatis
+
+Data adalah emas. Sistem digital akan memberi tahu Anda produk apa yang paling laku, kapan jam tersibuk apotek Anda, hingga siapa pelanggan setia Anda. Gunakan data ini untuk menyusun strategi pemasaran yang lebih jitu.`,
+        date: "20 April 2026",
+        img: "https://images.unsplash.com/photo-1551288049-bbbda5366392?q=80&w=1200"
+      },
+      {
+        slug: "strategi-stok-cashflow",
+        title: "Strategi Pengadaan Stok untuk Menjaga Cashflow",
+        excerpt: "Jangan biarkan modal Anda mati di gudang. Pelajari cara mengelola perputaran barang yang efektif.",
+        content: `# Strategi Pengadaan Stok untuk Menjaga Cashflow
+
+Masalah klasik apotek: uang habis tapi barang banyak, atau sebaliknya. Pengelolaan stok yang buruk adalah penyebab utama kegagalan aliran kas (cashflow).
+
+## Analisis Pareto (80/20)
+
+Fokuslah pada 20% produk yang menyumbang 80% omzet Anda. Stok produk ini tidak boleh kosong, namun jangan berlebihan menyetok produk yang jarang laku meskipun marginnya terlihat besar.
+
+## Hubungan Baik dengan PBF
+
+Pedagang Besar Farmasi (PBF) adalah partner Anda. Miliki hubungan yang baik untuk mendapatkan diskon dan termin pembayaran yang lebih longgar. Ini akan sangat membantu napas cashflow Anda.
+
+## Evaluasi Fast vs Slow Moving
+
+Lakukan evaluasi setiap bulan. Barang yang tidak bergerak selama 3 bulan harus segera dipromosikan atau dikembalikan ke distributor jika memungkinkan. Jangan biarkan modal Anda berdebu di rak.`,
+        date: "22 April 2026",
+        img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200"
       }
     ]
   },

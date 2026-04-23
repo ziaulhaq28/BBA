@@ -1,3 +1,12 @@
+/**
+ * FILE: src/components/Home.tsx
+ * TUJUAN: Halaman Beranda (Muka) Website BBA.
+ * 
+ * BAGIAN UTAMA:
+ * 1. Hero Slider: Slider gambar di bagian atas dengan efek blur pada teks.
+ * 2. Layanan Utama: Tiga produk inti (Pendirian, Audit, Sistemasi).
+ * 3. Testimonial: Pendapat klien yang sudah sukses.
+ */
 import { motion, AnimatePresence } from 'motion/react';
 import { ChevronRight, ArrowRight, CheckCircle2, Star, Quote, Signal, Users, ShieldCheck, PlayCircle, ArrowLeft } from 'lucide-react';
 import { siteContent } from '../constants/content';

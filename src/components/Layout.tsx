@@ -1,3 +1,13 @@
+/**
+ * FILE: src/components/Layout.tsx
+ * TUJUAN: Sebagai kerangka utama website (Header, Navigasi, dan Footer).
+ * 
+ * PENJELASAN:
+ * - Komponen ini membungkus semua halaman (Home, About, dll).
+ * - Header: Berisi logo dan menu yang berubah warna saat di-scroll (isScrolled).
+ * - SearchModal: Logika pencarian yang Anda minta, muncul secara popup.
+ * - Footer: Bagian bawah website yang berisi info kontak.
+ */
 import { ReactNode, useState, useEffect, useRef } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { Search, Menu, X, Phone, MessageSquare, Globe, Info, Building2, LogOut, User as UserIcon, ShieldCheck, ArrowRight } from 'lucide-react';
